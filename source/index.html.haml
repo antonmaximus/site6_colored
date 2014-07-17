@@ -115,7 +115,7 @@ body_class: index
           - @path = ['fufu', 'savageOppress', 'killerSuperAceHighFive', 'deathWatchNiteOwl', 'bob']
           - @alt.zip(@path).each do |varAlt, varPath|
             .item{ class: varPath=='fufu' ? 'active' : '' }
-              = image_tag('./carousel/450_'+varPath+'.png', alt:varAlt)
+              = image_tag('carousel/450_'+varPath+'.png', alt:varAlt)
         %a.carousel-control.left{ href:'myCarousel', 'data-slide'=>'prev' }
           %span.glyphicon.glyphicon-chevron-left
         %a.carousel-control.right{ href:'myCarousel', 'data-slide'=>'next' }
