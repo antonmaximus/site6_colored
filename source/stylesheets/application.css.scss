@@ -1,0 +1,342 @@
+//= require_tree ./vendor
+//= require_tree ./lib
+
+$bg: #e5e8f1;
+$kicker: #e4e3e8;
+$tint: #b1b0b8;
+$tone: #80828f;
+$shade: #313036;
+
+$highlight: #D91623;
+//CC2224
+//D91623
+
+$aj-red: #cb1e1e;
+$textAlpha: rgba(0, 0, 0, 0.298039);
+
+
+/*------------------------------------*\
+  Override Bootstrap
+\*------------------------------------*/
+body {
+  background: $bg url();
+  color: $textAlpha;
+  text-align: center;
+  font-family: sans-serif; 
+
+  a {
+    color: $textAlpha ;
+  }
+}
+
+/*------------------------------------*\
+  Custom
+\*------------------------------------*/
+h1 {
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.welcome {
+  h1 {
+    color: rgba(0, 0, 0, .3);
+
+    background: url("a.png") no-repeat center 100px;
+    background-size: 15%;
+    padding: 350px 0 10px;
+    margin: 0; 
+  }
+
+  p.doc {
+    color: rgba(0, 0, 0, 0.298039);
+    font-size: 14px;
+    margin: 0; 
+
+    &:before,
+    &:after {
+      opacity: .2;
+      padding: 6px;
+      font-style: normal;
+      position: relative;
+      content: "•";
+    }
+
+
+  }
+}
+
+
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: .9s; }
+
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+   -webkit-transform: scale(0);
+   opacity: 0;
+  }
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+
+
+
+
+header {
+  height: 92vh;
+  width: 100%;
+}
+
+#portfolio {
+  background-color: $tint;
+  padding-top: 2%;
+  height: 600px;
+
+  .nav {
+    text-align: center;
+    margin-bottom: 1.5%;
+  }
+
+
+
+// ANiMATION
+  .nav-pills > li {
+    float:none;
+    display:inline-block;
+    border-bottom: 2px solid transparent;
+
+    $h: 32px;
+
+    a, a:hover {
+      @extend h1;
+      padding: 0;
+      background-color: $tint;
+      text-shadow: none;
+      text-decoration: none;
+      outline: 0;
+    }
+    .spin{
+      color: $textAlpha;
+      display: block;
+      height: $h;
+      line-height: $h;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+      float:left; //Prevents jumping on Safari
+    }
+
+    .spin span{
+      display:block; 
+      height: $h;
+      vertical-align: middle;
+    }
+
+    .spin span:first-child{
+      transition: 0.3s;
+      margin-top: -$h;   
+    }
+
+    .spin:hover span:first-child{
+      margin-top: 0;
+      color: $shade;
+    }
+
+    .spin {
+    }
+
+    &.active {
+      border-bottom: 2px solid $shade;
+    }
+
+    &.active .spin {
+      color: $shade;
+    }
+  }
+
+
+
+}
+
+
+
+#test {
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  $h: 32px;
+  a, a:hover {
+    @extend h1;
+    text-shadow: none;
+    text-decoration: none;
+  }
+  .spin{
+    color: $textAlpha;
+    display: block;
+    height: $h;
+    line-height: $h;
+    overflow: hidden;
+    background-color: #3b5998;
+    cursor: pointer;
+    text-align: center;
+      float:left; //Prevents jumping on Safari
+
+  }
+
+  .spin span{
+    display:block; /* important */
+    height: $h;
+    vertical-align: middle;
+  }
+
+  .spin span:first-child{
+    transition: 0.3s;     
+  }
+
+
+  .spin span:first-child {
+    margin-top: -$h;   
+  }
+
+  .spin:hover span:first-child{
+    margin-top: 0;
+    color: $shade;
+  }
+}
+
+
+
+
+
+.aj-sites {
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  margin-bottom: 0;
+
+  li {
+    display: inline-block;
+   margin: 0 1%;
+  }
+
+  figcaption {
+  }
+
+}
+
+.browserDrawing {
+  $monitorColor:  #777;
+  $monitorBorder: 2px solid $monitorColor;
+  $monitorRadius: 4.5px;
+  $bulletRadius: 6px;
+
+  font-size: 10px;
+  display: inline-block;
+  padding: 2%;
+
+
+  .outerBox {
+    border: $monitorBorder;
+    border-radius: $monitorRadius;
+  }
+
+  .headerBox {
+    background-color: #DDD;
+    border-bottom: $monitorBorder;
+    text-align: left;
+    padding: 1%;
+  }
+
+  .circle {
+    display: inline-block;
+    background-color:  $monitorColor;
+    border: $bulletRadius;
+    border-radius: $bulletRadius;
+    height: $bulletRadius;
+    width: $bulletRadius;
+  }
+
+  .urlArea {
+    display: inline-block;
+    border: $monitorBorder;
+    border-radius: $monitorRadius;
+    color: rgba(0, 0, 0, 0.498039);
+    text-align: left;
+    width: 85%;
+    margin-left: 0.8%;
+    padding-left: 1%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  background-color: $shade;
+  color: $bg;
+
+
+  div {
+    width: 33%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 2%;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 3%;
+
+  }
+
+  p {
+    position: relative; //to be in-front of image
+  }
+
+  ul {
+    list-style:  none;
+    margin: 0;
+    padding: 0 0 1% 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+}
+
+/*------------------------------------*\
+  Media Query
+\*------------------------------------*/
+@media screen and (max-width: 768px) {
+  .navbar-default {
+    background: $bg;
+  }
+
+
+}

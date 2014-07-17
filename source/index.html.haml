@@ -1,0 +1,151 @@
+---
+title: Anton
+body_class: index
+---
+
+
+%header.navbar.navbar-static-top#top{ role:'banner' }
+  / %nav.navbar.navbar-default{ role:'navigation' }
+  /   %div.container
+  /     / Brand and toggle get grouped for better mobile display
+  /     %div.navbar-header
+  /       %button.navbar-toggle{ type:'button', data:{ target:'#navbarCollapse', toggle:'collapse'} }
+  /         %span.sr-only Toggle navigation
+  /         %span.icon-bar
+  /         %span.icon-bar
+  /         %span.icon-bar
+  /       %a.navbar-brand.scroll{ href:'#top'}
+  /         %span.glyphicon.glyphicon-home
+  /     / Collection of nav links and other content for toggling
+  /     %div.collapse.navbar-collapse#navbarCollapse
+  /       %ul.nav.navbar-nav
+  /         %li= link_to 'Portfolio', '#portfolio', { class:'scroll', id:'firstSelection' }
+  /         %li= link_to 'Connect', '#connect', { class:'scroll' }
+  /       %ul.nav.navbar-nav.navbar-right
+  /         %li= link_to 'Blog', '//blog.anton23.com/', { target:'_blank' }
+  .welcome
+    %h1 Webdev
+    %p.doc I code and I prettify things.
+
+/ <div class="browser cond">
+/           <div class="top">
+/             <ul><li></li><li></li><li></li></ul>
+/             <span>socialcrunch.com</span>
+/           </div>
+/           <img src="/socialcrunch/images/socialcrunch@2x.jpg" width="706" height="489">
+/         </div>
+
+
+%div#test
+  %ul
+    %li
+      %a.spin
+        %span Web
+        %span Web
+    %li
+      %a.spin
+        %span Animation
+        %span Animation
+    %li
+      %a.spin
+        %span C++
+        %span C++
+
+
+
+%main#portfolio
+  %ul.nav.nav-pills
+    %li.active
+      %a.spin{'data-toggle'=>'pill', href:'#sectionA'} 
+        %span Web
+        %span Web
+    %li
+      %a.spin{'data-toggle'=>'pill', href:'#sectionB'} 
+        %span Animation
+        %span Animation
+    %li
+      %a.spin{'data-toggle'=>'pill', href:'#sectionC'} 
+        %span C++
+        %span C++
+  .tab-content
+    .tab-pane.fade.in.active#sectionA
+      %ul.aj-sites
+        %li
+          .browserDrawing
+            .outerBox
+              .headerBox 
+                - (0..2).each do
+                  .circle
+                .urlArea http://localhost:4567/
+              .contentBox= image_tag('./web.jpg', alt:'web')
+          %figcaption Raw JavaScript App
+        %li
+          .browserDrawing
+            .outerBox
+              .headerBox 
+                - (0..2).each do
+                  .circle
+                .urlArea http://localhost:4567/
+              .contentBox= image_tag('./web.jpg', alt:'web')
+          %figcaption Raw JavaScript App
+        %li
+          .browserDrawing
+            .outerBox
+              .headerBox 
+                - (0..2).each do
+                  .circle
+                .urlArea http://localhost:4567/
+              .contentBox= image_tag('./web.jpg', alt:'web')
+          %figcaption Raw JavaScript App
+
+    .tab-pane.fade#sectionB
+      .justADiv just a div
+    /   %iframe.youtube-player{ type:'text/html', allowfullscreen:true, src:'//www.youtube.com/embed/IGdQ-C8-jlc?wmode=transparent&amp;autoplay=0&amp;rel=0&amp;showinfo=0&amp;autohide=1&amp;color=white&amp;'}
+
+    .tab-pane.fade#sectionC
+      .carousel.slide#myCarousel{ data:{ ride:'carousel', interval:'2300' } }
+        / Carousel Indicators
+        %ol.carousel-indicators
+          / Looping elements for the dropdown sub-menu
+          - (0..4).each do |i|
+            - @active = i==0 ? 'active' : ''
+            %li{ class:@active, data:{ target:'myCarousel', slide:{to: i } } }
+        .carousel-inner
+          - @alt = ['Fufu', 'Savage Oppress', 'Super Ace & Killer', 'Nite Owl', 'Bob']
+          - @path = ['fufu', 'savageOppress', 'killerSuperAceHighFive', 'deathWatchNiteOwl', 'bob']
+          - @alt.zip(@path).each do |varAlt, varPath|
+            .item{ class: varPath=='fufu' ? 'active' : '' }
+              = image_tag('./carousel/450_'+varPath+'.png', alt:varAlt)
+        %a.carousel-control.left{ href:'myCarousel', 'data-slide'=>'prev' }
+          %span.glyphicon.glyphicon-chevron-left
+        %a.carousel-control.right{ href:'myCarousel', 'data-slide'=>'next' }
+          %span.glyphicon.glyphicon-chevron-right
+
+%footer
+  %div
+    / # = image_tag('./akoBWSquare.jpg', alt:'anton')
+    %p I currently contribute to the world with HTML, CSS, and JavaScript... and I'll happily play around with other languages too.  I really like dried mango chili haba&#241;ero, fair weather, being active, and the simple life.  
+  %ul
+    %li
+      %a{ href:'//www.linkedin.com/in/anton23', alt:'LinkedIn', target:'_blank' }
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-envelope.fa-stack-1x.fa-inverse
+    %li
+      %a{ href:'//www.linkedin.com/in/anton23', alt:'LinkedIn', target:'_blank' }
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-linkedin.fa-stack-1x.fa-inverse
+    %li
+      %a{ href:'//www.linkedin.com/in/anton23', alt:'Github', target:'_blank' }
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-github-alt.fa-stack-1x.fa-inverse
+    %li
+      %a{ href:'//www.imdb.com/name/nm5641463/', alt:'IMDB', target:'_blank' }
+        %span.fa-stack.fa-lg
+          %i.fa.fa-circle.fa-stack-2x
+          %i.fa.fa-twitter.fa-stack-1x.fa-inverse
+
+
+
