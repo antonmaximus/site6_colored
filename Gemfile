@@ -2,7 +2,6 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-<<<<<<< HEAD
 gem "middleman", "~>3.3.3"
 
 # Live-reloading plugin
@@ -15,7 +14,3 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 gem "tzinfo-data", platforms: [:mswin, :mingw]
 
 gem 'middleman-autoprefixer'
-=======
-gem "middleman", "~>3.0.13"
-gem "middleman-livereload", "~> 3.1.0"
->>>>>>> c02f226de4195301e063da607d44767a966d8d81
