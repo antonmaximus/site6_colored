@@ -1,0 +1,455 @@
+@charset "utf-8";
+/*------------------------------------*\
+    CONTENTS
+\*------------------------------------*/
+/*
+IMPORTS
+MAIN
+CAROUSEL
+*/
+
+
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+@import "reset";
+@import "variables";
+
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+body {
+  background-color: $bg;
+  color: black;
+  font-family: $globalFont;
+  text-align: center;
+
+  a {
+    outline: 0;
+  }
+}
+
+
+h1 {
+
+}
+
+/*------------------------------------*\
+    $General Content
+\*------------------------------------*/
+h1 {
+  color: $textAlpha;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+header {
+  height: 95vh;
+  width: 100%;
+}
+
+svg {
+    margin: 10% 0 30px;
+
+  a path {
+    fill: $angularRed;
+    transition: all 1s ease-out;
+  }
+  a:hover path {
+    fill: red;
+  }
+}
+
+
+p.doc {
+  color: $textAlpha;
+  font-size: 14px;
+  margin: 0; 
+
+  &:before,
+  &:after {
+    opacity: .2;
+    padding: 6px;
+    font-style: normal;
+    position: relative;
+    content: "•";
+  }
+}
+
+
+//Animation
+.welcome {
+  animation-name: welcome;
+  animation-duration: .9s; }
+
+@keyframes welcome {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+   transform: scale(0);
+   opacity: 0;
+  }
+  82.5% {
+    transform: scale(1.03);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
+.colorChange {
+  animation-name: colorChange;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-delay: 1.2s;
+  animation-duration: 1s; }
+@keyframes colorChange {
+    0%   {fill: $angularRed;}
+    50%  {fill: red;}
+    100% {fill: $angularRed;}
+}
+
+
+
+
+/*------------------------------------*\
+    $Pills Navigation
+\*------------------------------------*/
+
+$spinnerHeight: 32px;
+
+#portfolio {
+  background-color: $tint;
+  padding-top: 2.3%;
+  min-height: 650px;
+
+  .nav {
+    text-align: center;
+    margin-bottom: 2.5%;
+  }
+
+  .nav-pills > li {
+    @extend h1;
+    text-shadow: none;
+    text-decoration: none;
+
+    float:none;
+    display:inline-block;
+
+    a, a:hover {
+      padding: 0;
+      background-color: $tint;
+      outline: 0; //for firefox
+
+    }
+    .spin{
+      color: $textAlpha;
+      display: block;
+      height: $spinnerHeight;
+      line-height: $spinnerHeight;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+      float:left; //Prevents jumping on Safari
+    }
+
+    .spin span{
+      display:block; 
+      height: $spinnerHeight;
+      vertical-align: middle;
+    }
+
+    .spin span:first-child{
+      transition: 0.3s;
+      margin-top: -$spinnerHeight;   
+    }
+
+    .spin:hover span:first-child{
+      margin-top: 0;
+      color: $shade;
+    }
+
+    &.active {
+      // border-bottom: 2px solid $shade;
+    }
+
+    &.active .spin {
+      color: $shade;
+    }
+  }
+
+  li.filler {
+    vertical-align: super;
+  }
+
+}
+
+
+/*------------------------------------*\
+    $First Tab Pane
+\*------------------------------------*/
+.aj-sites {
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  margin-bottom: 0;
+
+  li {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+}
+
+
+.plane {
+  color: $tone;
+  padding: 0;
+  height: 430px;
+  width: 360px;
+  background-color: $plane;
+  border: 1px solid #eee;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+
+  margin: 0 20px 20px 20px;
+
+  text-align: left;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  text-align: center;
+
+  a {
+    outline: 0;
+  }
+
+  h3 {
+    margin-top: 5px;
+  }
+
+
+  p {
+    max-width: 350px;
+    margin-top: 13px;
+  }
+
+  .info {
+    padding: 0 20px 0 20px;
+    text-align: left;
+
+  }
+
+  .tags {
+    margin-top: 20px;
+    vertical-align: bottom;
+  }
+
+  a.gitLink {
+    color: $shade;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+
+    &:hover{
+      border-bottom: 1px solid ;
+      color: $angularRed;
+    }
+  }
+
+  .info span {
+    color: $bg;
+    padding: 1px 4px 2px;
+    border-radius: 3px;
+    background-color: $spanTag;
+    display: inline-block;
+    margin: 0 2px 5px 2px;
+
+  }
+}
+
+.imageLink {
+  height: 200px;
+  width: 338px;
+  margin: 15px 10px 0 10px;
+
+  overflow: hidden;
+  position: relative;
+
+  a img {
+    position: relative;
+    width: 100%;
+    height: 200%;
+  }
+
+  a:hover img {
+    top: -100%;
+  }
+}
+
+
+
+.topSecret {
+  font-family: 'top_secretbold';
+  position: relative;
+
+  span {
+    position: absolute;
+    left: 20%;
+    top: 31%;
+    font-size: 30px;
+    transform: rotate(-30deg);
+    color: $angularRed;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/*------------------------------------*\
+    $Second Tab Pane
+\*------------------------------------*/
+//Bootstrap Override
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img{
+  //width: 100%; /* use this, or not */
+  margin: auto;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background: none;
+}
+
+.carouselWrapper{
+    width: 80%; /* for example */
+    margin: auto;
+  max-width: 675px;
+
+}
+
+
+/*------------------------------------*\
+    $Third Tab Pane
+\*------------------------------------*/
+.objectWrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+footer {
+  text-align: center;
+  background-color: $shade;
+  color: $bg;
+
+  div {
+    width: 33%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 2%;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 3%;
+
+  }
+
+  p {
+    position: relative; //to be in-front of image
+  }
+
+  ul {
+    list-style:  none;
+    margin: 0;
+    padding: 0 0 1% 0;
+    font-size: 16px;
+  }
+
+  li {
+    display: inline-block;
+    margin: 25px 0 18px;
+  }
+
+  li+li{
+    margin-left: 30px;
+  }
+
+  a {
+    color: $bg;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 10px 10px;
+    width: 91px;
+
+    &:hover {
+      text-decoration: none;
+      border: 2px solid $bg;
+      color: $bg;
+    }
+  }
+
+  span {
+    display: block;
+  }
+}
+
+
+
+/*------------------------------------*\
+    $MEDIA QUERY
+\*------------------------------------*/
+@media screen and (max-width: 500px) {
+  footer {
+    ul {
+      font-size: 12px;
+
+      span {
+        display: none;
+      }
+    }
+
+    a {
+      width: 60px;
+    }
+  }
+
+
+}
