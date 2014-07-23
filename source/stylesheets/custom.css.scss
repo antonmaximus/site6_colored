@@ -126,16 +126,36 @@ p.doc {
     $Pills Navigation
 \*------------------------------------*/
 
-$spinnerHeight: 32px;
+
+// .nav-pills>li.active>a, 
+// .nav-pills>li.active>a:hover, 
+// .nav-pills>li.active>a:focus {
+//   background-color: transparent;
+//   border: 4px solid $textAlpha;
+//   color: $textAlpha;
+// }
+
+  
+// .nav>li>a:hover, .nav>li>a:focus {
+//   background-color: transparent;
+//   border: 4px solid $textAlpha;
+// }
+
+// .nav>li>a, .nav>li>a {
+//   color: $textAlpha; 
+//   border: 4px solid transparent;
+//   padding: 6px 9px;
+// }
+
 
 #portfolio {
   background-color: $tint;
-  padding-top: 2.3%;
+  padding-top: 40px;
   min-height: 650px;
 
   .nav {
     text-align: center;
-    margin-bottom: 2.5%;
+    margin-bottom: 3.3%;
   }
 
   .nav-pills > li {
@@ -146,51 +166,68 @@ $spinnerHeight: 32px;
     float:none;
     display:inline-block;
 
-    a, a:hover {
-      padding: 0;
-      background-color: $tint;
+
+    $textHeight: 32px;
+    $topOffset: 1px;
+    $bottomOffset: 2px;
+    $offset: $topOffset + $bottomOffset;
+
+    a {
       outline: 0; //for firefox
-
-    }
-    .spin{
-      color: $textAlpha;
-      display: block;
-      height: $spinnerHeight;
-      line-height: $spinnerHeight;
-      overflow: hidden;
-      cursor: pointer;
-      text-align: center;
       float:left; //Prevents jumping on Safari
+      background-color: $tint; //override bootstrap
+      color: $textAlpha;
+      text-align: center;
+      border-radius: 0;
+      margin: 0 5px;
+
+      padding: $topOffset 0 $bottomOffset ;
+      box-sizing: content-box;
+      height: $textHeight;
+      line-height: $textHeight;
+      overflow: hidden;
+
+      border-style: solid;
+      border-color: transparent;
+      border-width: 3px 0;
     }
 
-    .spin span{
+    a:hover {
+      // border-color: $textAlpha;
+    }
+
+    a span{
       display:block; 
-      height: $spinnerHeight;
+      height: $textHeight + $offset;
       vertical-align: middle;
     }
 
-    .spin span:first-child{
+    a span:first-child{
       transition: 0.3s;
-      margin-top: -$spinnerHeight;   
+      margin-top: -$textHeight - $offset;
     }
 
-    .spin:hover span:first-child{
+    a:hover span:first-child{
       margin-top: 0;
       color: $shade;
+    }    
+    &.active a:hover span:first-child{
+      // margin-top: -$textHeight - $offset;
     }
 
-    &.active {
-      // border-bottom: 2px solid $shade;
-    }
-
-    &.active .spin {
+    &.active a {
       color: $shade;
+      border-color: $shade;
     }
+
+
   }
 
   li.filler {
     vertical-align: super;
   }
+
+
 
 }
 
@@ -451,5 +488,38 @@ footer {
     }
   }
 
+  #portfolio {
+    padding-top: 6%;
+  }
+}
 
+
+
+@media screen and (max-width: 400px) {
+  .plane {
+      margin: 0 0px 10px 0;
+  }
+
+
+}
+
+
+@media screen and (max-width: 360px) {
+  .plane {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .imageLink {
+    margin: 2% auto;
+    width: 300px;
+  }
+
+  footer li + li {
+    margin-left: 13px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
 }
