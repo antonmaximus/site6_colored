@@ -211,8 +211,12 @@ p.doc {
       margin-top: 0;
       color: $shade;
     }    
-    &.active a:hover span:first-child{
+
+    &.active a span:first-child,
+    &.active a:hover span:first-child {
       // margin-top: -$textHeight - $offset;
+      margin-top: 0;
+
     }
 
     &.active a {
@@ -499,8 +503,6 @@ footer {
   .plane {
       margin: 0 0px 10px 0;
   }
-
-
 }
 
 
@@ -521,5 +523,14 @@ footer {
   
   h1 {
     font-size: 28px;
+  }
+}
+
+
+
+@media screen and (max-height: 400px) {
+  svg {
+      height: 175px;
+      margin: 5% 0 1%;
   }
 }
