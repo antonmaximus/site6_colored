@@ -461,9 +461,12 @@ footer {
     width: 91px;
 
     &:hover, &:focus, &:active {
-      text-decoration: none;
-      border: 2px solid $bg;
       color: $bg;
+      text-decoration: none;
+    }
+
+    &:hover {
+      border: 2px solid $bg;
     }
   }
 
