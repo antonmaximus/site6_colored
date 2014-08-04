@@ -150,7 +150,7 @@ p.doc {
 
 #portfolio {
   background-color: $tint;
-  padding-top: 40px;
+  padding-top: 5vh; //40px;
   min-height: 650px;
 
   .nav {
@@ -496,9 +496,6 @@ footer {
     }
   }
 
-  #portfolio {
-    padding-top: 6%;
-  }
 }
 
 
