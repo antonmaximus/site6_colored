@@ -242,7 +242,7 @@ figure {
     filter: none;
   }
   a:hover img {
-    filter: url('/stylesheets/filters.svg#red');
+    filter: url('../stylesheets/filters.svg#red');
   }
 
   figcaption {
