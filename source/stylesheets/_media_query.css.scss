@@ -1,0 +1,92 @@
+
+/*------------------------------------*\
+    $MEDIA QUERY
+\*------------------------------------*/
+
+@media screen and (max-width: 1200px) { //Upto Medium screen
+  figure {
+    min-height: 444px;
+  }
+
+  //Center odd-numbered of spans on grid
+  .row-centered {
+      text-align:center;
+  }
+  .col-centered {
+      display:inline-block;
+      float:none;
+      /* reset the text-align */
+      text-align:left;
+      /* inline-block space fix */
+      margin-right:-4px;
+  }
+
+
+}
+
+
+
+@media screen and (max-width: 992px) { //Upto Small screen
+  figure {
+    // min-height: 444px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) { //Upto Mobile
+  svg {
+    width: 175px;
+  }
+}
+
+
+
+@media screen and (max-width: 400px) {
+  .plane {
+      margin: 0 0px 10px 0;
+  }
+
+  footer {
+
+    li {
+      font-size: 13px;
+    }
+    a {
+      width: 70px;
+      height: 70px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+
+@media screen and (max-width: 360px) {
+  .plane {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .imageLink {
+    margin: 2% auto;
+    width: 300px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+
+
+}
+
+
+
+@media screen and (max-height: 400px) {
+  svg {
+      height: 175px;
+      margin: 5% 0 1%;
+  }
+}

@@ -1,10 +1,12 @@
 $globalFont: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$globalFontSize: 16px;
 
 $bg: #e5e8f1;
 $kicker: #e4e3e8;
 $tint: #b1b0b8;
 $tone: #80828f;
 $shade: #313036;
+$shade2: #3f4449;
 
 $highlight: #D91623;
 //CC2224
@@ -13,6 +15,8 @@ $highlight: #D91623;
 $aj-red: #cb1e1e;
 $angularRedLogo: hsla(1, 62, 45, 1); //#b94a48;
 $angularRed: #b94a48;
+$angularRedHSLA: hsla(1, 54.7, 59.4, 1); // orig: hsla(1, 44.7, 50.4, 1);
+
 $angularRedLighter: hsla(1, 82, 65, 1); 
 $textAlpha: rgba(0, 0, 0, 0.298039);
 
